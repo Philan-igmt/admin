@@ -1,0 +1,9 @@
+<div class="equipments">
+    <h1 class="head">List of Equipments</h1>
+    <div class="all-cards">
+        <ul class="card" *ngFor="let item of equipments">
+        <h1>{{item.name}}: <p>{{item.description}}</p> <button (click)='deleteTool(item._id)' class="btn btn-danger">DELETE <span class="btn btn-dark">X</span></button></h1>
+        </ul> 
+    </div>
+   
+</div>

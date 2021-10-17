@@ -1,0 +1,15 @@
+.each {
+  width: 380px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 3%;
+}
+
+.head {
+  text-align: center;
+}
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+}

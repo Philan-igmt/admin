@@ -1,0 +1,22 @@
+<div class="all-orders">
+    
+    <div>
+        <h1 class="head">All Orders</h1>
+    </div>
+    <div class="all-cards">
+        <div class="orders" *ngFor="let item of allOrdersFromDB; let i=index">
+        <div class="each card">
+            <h3>Order {{i+1}}</h3>
+            <p>Street Address :{{item.streetaddress}}</p>
+            <p>City: {{item.city}}</p>
+            <p>Area: {{item.area}}</p>
+            <p>Delivery Date (prefereable): {{item.deliveryDate | date:'MMM d, y'}} @{{item.deliveryTime}}</p>
+            <p>Delivery type {{item.option}}</p>
+            <p>Total Amount {{item.total}}</p>
+            <button (click)='addToDelivered(item)' class="btn-success">Add to Delivered</button>
+        </div>
+    </div>
+    </div>
+    
+
+</div>

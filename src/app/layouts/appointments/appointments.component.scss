@@ -1,0 +1,72 @@
+.table {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+
+  td {
+    padding: 1%;
+  }
+}
+
+ng-container {
+  padding: 4%;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 18px;
+}
+.two {
+  text-align: center;
+}
+.platter-list {
+  display: flex;
+}
+
+.tablee {
+  padding: 5%;
+  margin: auto;
+}
+table.mat-table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.applaters {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .head {
+    text-align: center;
+  }
+  .two {
+    margin-top: 5%;
+  }
+  .form {
+    margin-left: 25%;
+    padding: 3%;
+    width: 50%;
+    height: auto;
+    border: 1px solid black;
+    .name,
+    .price,
+    .desc {
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      width: 100%;
+    }
+    label {
+      width: 50%;
+    }
+    input {
+      width: 50%;
+      margin-left: -5%;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<div class="applaters">
+    <h1 class="head">Add Platter</h1>
+    <div class="form">  
+        <form [formGroup]="platterForm">
+        <div class="name">
+            <label>Name</label>
+            <input type="text" formControlName="name">  
+        </div> 
+        <p *ngIf="platterForm.controls.name.errors && platterForm.controls.name.touched" class="text-danger">This field is required!</p>
+        <div class="price">
+            <label>Price</label>
+            <input type="number" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ?
+            null : event.charCode >= 48 && event.charCode <= 57" formControlName="price">
+        </div>
+        <p *ngIf="platterForm.controls.price.errors && platterForm.controls.price.touched" class="text-danger">This field is required!</p>
+        <div class="desc">
+            <label>Description</label>
+            <input type="text" formControlName="description">
+        </div>
+        <p *ngIf="platterForm.controls.description.errors && platterForm.controls.description.touched" class="text-danger">This field is required!</p>
+        <div class="name">
+            <label>Image URL</label>
+            <input type="text"  formControlName="imageUrl">
+        </div>
+        <p *ngIf="platterForm.controls.imageUrl.errors && platterForm.controls.imageUrl.touched" class="text-danger">This field is required! & it should be a URL not a file</p>
+        <!-- <div class="submit" ><button (click)=savePlatter() class="btn-primary">Save to database</button></div> -->
+        <button  (click)=savePlatter() [disabled]="!platterForm.valid" class="btn btn-success btn-sm btn-rounded">Submit</button>
+    </form>
+    </div>
+    <div class="platters-list">
+        <h1 class="head two">Platters List</h1>
+      
+        <div class="tablee">
+            <table mat-table [dataSource]="allPlatterFromDB" class="mat-elevation-z8">
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef> Price </th>
+                  <td mat-cell *matCellDef="let element">R {{element.price}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef> Description </th>
+                  <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="imageUrl">
+                  <th mat-header-cell *matHeaderCellDef> Image URL </th>
+                  <td mat-cell *matCellDef="let element"> {{element.image}} </td>
+                </ng-container>
+                <ng-container matColumnDef="delete">
+                  <th mat-header-cell *matHeaderCellDef> Delete </th>
+                  <td mat-cell *matCellDef="let element"> <a (click)='deletePlatter(element._id,element.name)' class="btn btn-danger">DELETE</a> </td>
+                </ng-container>
+                <ng-container matColumnDef="update">
+                  <th mat-header-cell *matHeaderCellDef> Update </th>
+                  <td mat-cell *matCellDef="let element"> <a (click)='updatePlatter(element)' class="btn btn-success">UPDATE</a> </td>
+                </ng-container>
+                
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+        </div>
+        
+    </div>
+    
+    
+</div>

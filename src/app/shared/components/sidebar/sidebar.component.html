@@ -1,0 +1,47 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <img src="https://image.shutterstock.com/image-vector/spoon-fork-knife-icon-vector-260nw-1473185642.jpg" alt="logo">
+    </div>
+
+   
+
+    <h3 matSubheader class="head">Admin</h3>
+
+        <!-- <button mat-button [matMenuTriggerFor]="menu">EMPLOYEE</button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/employee"><button mat-button >Add Employee</button></a></button>
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/emeployeeList"><button mat-button >Employees List</button></a></button>
+        </mat-menu> -->
+        <mat-divider></mat-divider>
+
+        <button mat-button [matMenuTriggerFor]="equip">EQUIPMENT MANAGEMENT</button>
+        <mat-menu #equip="matMenu">
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/addEquipment"><button mat-button >Equipment</button></a></button>
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/equipmentList"><button mat-button >Equipment type</button></a></button>
+        <!-- can add the 3rd menu option -->
+        </mat-menu>
+        <mat-divider></mat-divider>
+
+        <button mat-button [matMenuTriggerFor]="order">ORDERS</button>
+        <mat-menu #order="matMenu">
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/orders"><button mat-button >Check Orders</button></a></button>
+        <!-- can add the 3rd menu option -->
+        </mat-menu>
+        <mat-divider></mat-divider>
+
+        <button mat-button [matMenuTriggerFor]="reviews">REVIEWS</button>
+        <mat-menu #reviews="matMenu">
+        <button mat-menu-item><a mat-list-item routerLinkActive="list-item-active"  routerLink="/reviews"><button mat-button >Reviews List</button></a></button>
+        <!-- can add the 3rd menu option -->
+        </mat-menu>
+        <mat-divider></mat-divider>
+
+    <a mat-list-item routerLinkActive="list-item" style="color: white;" routerLink="/appointment">APPOINTMENT</a>
+    <a mat-list-item routerLinkActive="list-item" style="color: white;" routerLink="/quotes">GENERATE QUOTE</a>
+    <a mat-list-item routerLinkActive="list-item" style="color: white;" routerLink="/platters">PRODUCTS</a>
+    <a mat-list-item routerLinkActive="list-item" style="color: white;" routerLink="/services">SERVICES</a>
+    <a mat-list-item routerLinkActive="list-item" style="color: white;" routerLink="/users">USERS</a>
+
+    <mat-divider></mat-divider>
+
+</mat-nav-list>
