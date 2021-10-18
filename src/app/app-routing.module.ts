@@ -21,6 +21,7 @@ import { LoginComponent } from './layouts/login/login.component';
 
 
 
+
 const routes: Routes = [
   {
     path:'',
@@ -33,18 +34,23 @@ const routes: Routes = [
       },
     {path:'appointment',
     component:AppointmentsComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'employee',
     component:EmployeesComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'emeployeeList',
     component:EmployeeListComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'addEquipment',
     component:EquipmentsComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'equipmentList',
     component:EquipmentListComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'platters',
     component:PlaatersComponent,
@@ -56,15 +62,19 @@ const routes: Routes = [
     },
     {path:'services',
     component:ServicesComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'users',
     component:UsersComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'reviews',
     component:ReviewsComponent,
+    canActivate: [AuthGuard] 
     },
     {path:'quotes',
     component:QuoteComponent,
+    canActivate: [AuthGuard] 
     },
      
     {path:'login', component:LoginComponent},

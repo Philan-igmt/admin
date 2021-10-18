@@ -36,10 +36,8 @@ import { EquipmentListComponent } from './layouts/equipment-list/equipment-list.
 import { ReviewsComponent } from './layouts/reviews/reviews.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 
-
-
-
-
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+import { LoginComponent } from './layouts/login/login.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +53,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
     EmployeeListComponent,
     EquipmentListComponent,
     ReviewsComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -66,7 +65,8 @@ import { AuthGuardService } from './auth/auth-guard.service';
     ReactiveFormsModule,
     MatTableModule
   ],
-  providers: [AuthGuardService],
+  providers: [AuthGuardService, { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

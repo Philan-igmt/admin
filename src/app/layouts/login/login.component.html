@@ -1,37 +1,8 @@
-<!-- <div class="login">
-    <div class="login-form"> 
-        <h1 class="login-heading text-success">
-        Login
-    </h1>
-    <form [formGroup]="loginForm">
-      <div class="example-full-width" appearance="fill">
-            <label>Email</label>
-            <input type="email" matInput placeholder="chulumanco@cyadla.food" formControlName="email">
-          </div>  
-          <p *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched">Please make sure your email is correct!</p> 
-          <br>
-          <div class="password">
-            <div appearance="fill">
-              <label>Password</label>
-              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-              <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              </span>
-            </div>   <br>  <div class="sub-btn"> 
-              <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched">Password must contain a capital letter, small letters, numbers and special characters and the length of the password should be 8 characters</div> 
-              
-          </div>
-          <button type="submit" (click)="onSubmit()" [disabled]="!loginForm.valid" class="btn btn-success btn-sm btn-rounded">Submit</button>
-          <a type="button" href="/resetpassowrd" class="btn btn-primary btn-sm btn-rounded">Reset Passowrd</a>
-          </div>
-    </form>
-      
-          
-       
-       
-          <div class="question">
-              <p>Don't have an account?<a href="/register">Register</a></p>
-          </div>
-          </div>
-</div> -->
-<h1>something</h1>
-<button (click)='signIn()' class="btn-success">Login</button>
+<div class="login">
+  <div class="card">
+    <h1 class="head">Login</h1>
+    <p class="explaination">Clcik the button to login, the credentials a built-in, it will send the token to the localstorage for you to be able to view the other components</p>
+    <button (click)='signIn()' class="btn-success">Login</button>
+  </div>
+
+</div>

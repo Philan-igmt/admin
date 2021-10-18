@@ -13,9 +13,10 @@ import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuardService } from 'src/app/auth/auth-guard.service';
 
-
-
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,12 +35,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     RouterModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     HeaderComponent,
     FooterComponent,
     SidebarComponent
-  ]
+  ],
+  providers: [AuthGuardService, { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService],
+  
 })
 export class SharedModule { }
